@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20261001-0507-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.29.2"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Windows"
+	Hostname="LAPTOP-B537UF8G"
+	OSRelease=" Personal"
+	OSVersion=" (Build 9200)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString=""
+	VendorID="Unknown Manufacturer"
+	FamilyID="0"
+	ModelID="0"
+	ProcessorCacheSize="0"
+	NumberOfLogicalCPU="16"
+	NumberOfPhysicalCPU="10"
+	TotalVirtualMemory="24202"
+	TotalPhysicalMemory="16010"
+	LogicalProcessorsPerPhysical="1"
+	ProcessorClockFrequency="2918"
+	>
+	<Testing>
+		<StartDateTime>Oct 01 00:07 SA Pacific Standard Time</StartDateTime>
+		<StartTestTime>1790831233</StartTestTime>
+		<TestList/>
+		<EndDateTime>Oct 01 00:07 SA Pacific Standard Time</EndDateTime>
+		<EndTestTime>1790831233</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

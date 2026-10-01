@@ -1,0 +1,32 @@
+[
+{
+  "directory": "D:/ALGORITMO Y ESTRUCTURA/SEMANA5/Practica_S05_Listas/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/main_lista.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -o CMakeFiles\\main_lista.dir\\src\\main_lista.cpp.obj -c \"D:\\ALGORITMO Y ESTRUCTURA\\SEMANA5\\Practica_S05_Listas\\cpp\\src\\main_lista.cpp\"",
+  "file": "D:/ALGORITMO Y ESTRUCTURA/SEMANA5/Practica_S05_Listas/cpp/src/main_lista.cpp",
+  "output": "CMakeFiles/main_lista.dir/src/main_lista.cpp.obj"
+},
+{
+  "directory": "D:/ALGORITMO Y ESTRUCTURA/SEMANA5/Practica_S05_Listas/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/main_floyd.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -o CMakeFiles\\main_floyd.dir\\src\\main_floyd.cpp.obj -c \"D:\\ALGORITMO Y ESTRUCTURA\\SEMANA5\\Practica_S05_Listas\\cpp\\src\\main_floyd.cpp\"",
+  "file": "D:/ALGORITMO Y ESTRUCTURA/SEMANA5/Practica_S05_Listas/cpp/src/main_floyd.cpp",
+  "output": "CMakeFiles/main_floyd.dir/src/main_floyd.cpp.obj"
+},
+{
+  "directory": "D:/ALGORITMO Y ESTRUCTURA/SEMANA5/Practica_S05_Listas/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/benchmark.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -o CMakeFiles\\benchmark.dir\\src\\benchmark_lista_vector.cpp.obj -c \"D:\\ALGORITMO Y ESTRUCTURA\\SEMANA5\\Practica_S05_Listas\\cpp\\src\\benchmark_lista_vector.cpp\"",
+  "file": "D:/ALGORITMO Y ESTRUCTURA/SEMANA5/Practica_S05_Listas/cpp/src/benchmark_lista_vector.cpp",
+  "output": "CMakeFiles/benchmark.dir/src/benchmark_lista_vector.cpp.obj"
+},
+{
+  "directory": "D:/ALGORITMO Y ESTRUCTURA/SEMANA5/Practica_S05_Listas/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/test_lista.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -o CMakeFiles\\test_lista.dir\\tests\\test_lista.cpp.obj -c \"D:\\ALGORITMO Y ESTRUCTURA\\SEMANA5\\Practica_S05_Listas\\cpp\\tests\\test_lista.cpp\"",
+  "file": "D:/ALGORITMO Y ESTRUCTURA/SEMANA5/Practica_S05_Listas/cpp/tests/test_lista.cpp",
+  "output": "CMakeFiles/test_lista.dir/tests/test_lista.cpp.obj"
+},
+{
+  "directory": "D:/ALGORITMO Y ESTRUCTURA/SEMANA5/Practica_S05_Listas/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/test_floyd.dir/includes_CXX.rsp -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -o CMakeFiles\\test_floyd.dir\\tests\\test_floyd.cpp.obj -c \"D:\\ALGORITMO Y ESTRUCTURA\\SEMANA5\\Practica_S05_Listas\\cpp\\tests\\test_floyd.cpp\"",
+  "file": "D:/ALGORITMO Y ESTRUCTURA/SEMANA5/Practica_S05_Listas/cpp/tests/test_floyd.cpp",
+  "output": "CMakeFiles/test_floyd.dir/tests/test_floyd.cpp.obj"
+}
+]

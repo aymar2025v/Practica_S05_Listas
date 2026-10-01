@@ -1,0 +1,96 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Practica_S05_Listas",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "benchmark::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-benchmark-Debug-68f6746ca522e8aad574.json",
+					"name" : "benchmark",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "main_floyd::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-main_floyd-Debug-401ada9ab2aafd7bd8f7.json",
+					"name" : "main_floyd",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "main_lista::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-main_lista-Debug-576354c8f3b4a020145e.json",
+					"name" : "main_lista",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_floyd::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_floyd-Debug-82c8da07315eb453b0c8.json",
+					"name" : "test_floyd",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_lista::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_lista-Debug-098f08ad48e99041acf7.json",
+					"name" : "test_lista",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/ALGORITMO Y ESTRUCTURA/SEMANA5/Practica_S05_Listas/build",
+		"source" : "D:/ALGORITMO Y ESTRUCTURA/SEMANA5/Practica_S05_Listas/cpp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
