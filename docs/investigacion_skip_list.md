@@ -1,10 +1,10 @@
 # Investigación — Skip List (Lista de Saltos)
 
-**Curso:** Algoritmos y Estructuras de Datos — SIS210  
-**Práctica:** N.º 05 — Listas Enlazadas  
-**Estudiante:** _[Apellido Nombre]_  
-**Docente:** Dr. Aldo Hernán Zanabria Gálvez  
-**Fecha:** _[dd/mm/aaaa]_  
+**Curso:** Algoritmos y Estructuras de Datos — SIS210
+**Práctica:** N.º 05 — Listas Enlazadas
+**Estudiante:**
+**Docente:** Dr. Aldo Hernán Zanabria Gálvez
+**Fecha:** 02/10/2026
 
 ---
 
@@ -15,6 +15,7 @@ La **Skip List** (lista de saltos) fue propuesta por **William Pugh en 1990** co
 La idea central es agregar **niveles jerárquicos de punteros** sobre una lista enlazada simple ordenada, de manera que algunos nodos "salten" por encima de otros y permitan descartar grandes porciones de la lista en cada paso. A diferencia de los árboles, **no hay rotaciones ni rebalanceos**: la estructura se mantiene balanceada de forma **aleatoria** gracias a un generador de números pseudoaleatorios.
 
 Este documento:
+
 1. Describe la estructura de una Skip List.
 2. Explica cómo logra \(O(\log n)\) esperado.
 3. Compara con lista enlazada simple, árbol AVL y árbol B.
@@ -44,6 +45,7 @@ Nivel 0: cabeza → [1] → [3] → [4] → [6] → [7] → [9] → [10] → [13
 ```
 
 Ahora buscar `14`:
+
 * En el nivel 2: `cabeza → 4 → 9 → 14` (3 saltos).
 * Se descarta toda la primera mitad de la lista en un solo salto.
 
@@ -54,6 +56,7 @@ Al agregar **más niveles**, la búsqueda se acelera aún más, de forma análog
 Una Skip List es una colección de listas enlazadas ordenadas \(S_0, S_1, ..., S_h\) (donde \(S_0\) es la lista base y \(S_h\) es el nivel más alto). Cada lista \(S_i\) contiene un subconjunto de los elementos de \(S_{i-1}\), y todo elemento de \(S_i\) también aparece en \(S_{i-1}\).
 
 **Propiedades:**
+
 * \(S_0\) contiene **todos** los elementos.
 * Cada \(S_i\) (con \(i > 0\)) contiene, en promedio, **la mitad** de los elementos de \(S_{i-1}\).
 * La probabilidad de que un nodo aparezca en el nivel \(i+1\) dado que aparece en el nivel \(i\) es \(p\) (típicamente \(p = 0.5\)).
@@ -62,6 +65,7 @@ Una Skip List es una colección de listas enlazadas ordenadas \(S_0, S_1, ..., S
 ### 2.3 Inserción aleatoria de niveles
 
 Cuando se inserta un nuevo elemento:
+
 1. Se busca su posición en \(S_0\) (como en una lista enlazada ordenada).
 2. Se lanza una moneda (o se genera un número aleatorio):
    * Con probabilidad \(p\) se promueve al nivel 1.
@@ -87,6 +91,7 @@ En promedio, un nodo tiene \(1 / (1 - p)\) niveles. Con \(p = 0.5\), cada elemen
 ### 3.1 Búsqueda
 
 Para buscar un valor \(x\):
+
 1. Comenzar en el nivel más alto, en el nodo cabeza.
 2. En cada nivel, avanzar mientras `siguiente.dato < x`.
 3. Cuando no se pueda avanzar (o el siguiente sea mayor o igual que \(x\)), bajar un nivel.
@@ -95,11 +100,11 @@ Para buscar un valor \(x\):
 
 Ejemplo con la Skip List anterior, buscando el valor 14:
 
-| Paso | Nivel | Nodo actual | Acción |
-| :--- | :--- | :--- | :--- |
-| 1 | 2 | cabeza | Avanzar a 4 (4 < 14) |
-| 2 | 2 | 4 | Avanzar a 9 (9 < 14) |
-| 3 | 2 | 9 | Avanzar a 14 (14 = 14) ✅ |
+| Paso | Nivel | Nodo actual | Acción                   |
+| :--- | :---- | :---------- | :------------------------ |
+| 1    | 2     | cabeza      | Avanzar a 4 (4 < 14)      |
+| 2    | 2     | 4           | Avanzar a 9 (9 < 14)      |
+| 3    | 2     | 9           | Avanzar a 14 (14 = 14) ✅ |
 
 **Total:** 3 saltos para buscar en una lista de 10 elementos.
 
@@ -122,12 +127,12 @@ Ambas operaciones mantienen un coste de **\(O(\log n)\) esperado**.
 
 ### 3.4 Complejidades
 
-| Operación | Lista simple | Skip List (esperado) | Skip List (peor caso) |
-| :--- | :--- | :--- | :--- |
-| **Búsqueda** | \(O(n)\) | \(O(\log n)\) | \(O(n)\) |
-| **Inserción** | \(O(n)\) | \(O(\log n)\) | \(O(n)\) |
-| **Eliminación** | \(O(n)\) | \(O(\log n)\) | \(O(n)\) |
-| **Espacio** | \(O(n)\) | \(O(n)\) | \(O(n \log n)\) |
+| Operación             | Lista simple | Skip List (esperado) | Skip List (peor caso) |
+| :--------------------- | :----------- | :------------------- | :-------------------- |
+| **Búsqueda**    | \(O(n)\)     | \(O(\log n)\)        | \(O(n)\)              |
+| **Inserción**   | \(O(n)\)     | \(O(\log n)\)        | \(O(n)\)              |
+| **Eliminación** | \(O(n)\)     | \(O(\log n)\)        | \(O(n)\)              |
+| **Espacio**      | \(O(n)\)     | \(O(n)\)             | \(O(n \log n)\)       |
 
 El peor caso \(O(n)\) es exponencialmente improbable (probabilidad \((1/2)^n\)), pero teóricamente posible.
 
@@ -150,6 +155,7 @@ Nivel 0:  cabeza → [1] → [3] → [4] → [6] → [7] → [9] → [10] → [1
 ```
 
 **Lectura del diagrama:**
+
 * El nodo 1 solo aparece en el nivel 0.
 * El nodo 3 aparece en los niveles 0 y 1.
 * El nodo 6 aparece en los niveles 0, 1 y 2.
@@ -158,6 +164,7 @@ Nivel 0:  cabeza → [1] → [3] → [4] → [6] → [7] → [9] → [10] → [1
 * El nodo 14 solo aparece en el nivel 0.
 
 **Cómo se lee una búsqueda de 13:**
+
 1. **Nivel 3:** `cabeza → 9` (9 < 13, avanzar). No hay siguiente en nivel 3 \(\rightarrow\) bajar.
 2. **Nivel 2:** `9 → NULL` (no hay siguiente) \(\rightarrow\) bajar.
 3. **Nivel 1:** `9 → 13` (13 = 13 ✅). Encontrado.
@@ -170,52 +177,54 @@ Nivel 0:  cabeza → [1] → [3] → [4] → [6] → [7] → [9] → [10] → [1
 
 ### 5.1 Skip List vs. Lista enlazada simple
 
-| Aspecto | Lista enlazada simple | Skip List |
-| :--- | :--- | :--- |
-| **Estructura** | 1 puntero por nodo | Múltiples punteros por nodo (niveles) |
-| **Búsqueda** | \(O(n)\) | \(O(\log n)\) esperado |
-| **Inserción** | \(O(n)\) | \(O(\log n)\) esperado |
-| **Eliminación** | \(O(n)\) | \(O(\log n)\) esperado |
-| **Ordenamiento** | No requiere | Requiere mantener el orden secuencial |
-| **Espacio** | \(O(n)\) | \(O(n)\) esperado |
-| **Rebalanceo** | No aplica | No hay rebalanceo explícito (es probabilístico) |
-| **Implementación** | Muy simple | Simple pero requiere gestión de aleatoriedad |
+| Aspecto                   | Lista enlazada simple | Skip List                                         |
+| :------------------------ | :-------------------- | :------------------------------------------------ |
+| **Estructura**      | 1 puntero por nodo    | Múltiples punteros por nodo (niveles)            |
+| **Búsqueda**       | \(O(n)\)              | \(O(\log n)\) esperado                            |
+| **Inserción**      | \(O(n)\)              | \(O(\log n)\) esperado                            |
+| **Eliminación**    | \(O(n)\)              | \(O(\log n)\) esperado                            |
+| **Ordenamiento**    | No requiere           | Requiere mantener el orden secuencial             |
+| **Espacio**         | \(O(n)\)              | \(O(n)\) esperado                                 |
+| **Rebalanceo**      | No aplica             | No hay rebalanceo explícito (es probabilístico) |
+| **Implementación** | Muy simple            | Simple pero requiere gestión de aleatoriedad     |
 
 **Ventaja principal de la Skip List:** conserva la flexibilidad de inserción de una lista enlazada (no hay complejas rotaciones de punteros distantes), pero dotándola de una complejidad logarítmica.
 
 ### 5.2 Skip List vs. Árbol AVL
 
-| Aspecto | Árbol AVL | Skip List |
-| :--- | :--- | :--- |
-| **Búsqueda** | \(O(\log n)\) garantizado | \(O(\log n)\) esperado |
-| **Inserción** | \(O(\log n)\) garantizado (con rotaciones) | \(O(\log n)\) esperado (sin rotaciones) |
-| **Eliminación** | \(O(\log n)\) garantizado (con rotaciones) | \(O(\log n)\) esperado (sin rotaciones) |
-| **Balanceo** | Estricto (factor de balance \(\le 1\)) | Probabilístico |
-| **Espacio** | 1 puntero/factor extra por nodo | Múltiples punteros por nodo (según nivel) |
-| **Implementación** | Compleja (múltiples casos de rotación) | Más simple y directa |
-| **Paralelización** | Difícil (las rotaciones afectan subárboles) | Fácil (las mutaciones son puramente locales) |
-| **Recorrido ordenado**| Requiere recorrido *In-order* | Directo y lineal recorriendo el nivel 0 |
+| Aspecto                      | Árbol AVL                                    | Skip List                                     |
+| :--------------------------- | :-------------------------------------------- | :-------------------------------------------- |
+| **Búsqueda**          | \(O(\log n)\) garantizado                     | \(O(\log n)\) esperado                        |
+| **Inserción**         | \(O(\log n)\) garantizado (con rotaciones)    | \(O(\log n)\) esperado (sin rotaciones)       |
+| **Eliminación**       | \(O(\log n)\) garantizado (con rotaciones)    | \(O(\log n)\) esperado (sin rotaciones)       |
+| **Balanceo**           | Estricto (factor de balance\(\le 1\))         | Probabilístico                               |
+| **Espacio**            | 1 puntero/factor extra por nodo               | Múltiples punteros por nodo (según nivel)   |
+| **Implementación**    | Compleja (múltiples casos de rotación)      | Más simple y directa                         |
+| **Paralelización**    | Difícil (las rotaciones afectan subárboles) | Fácil (las mutaciones son puramente locales) |
+| **Recorrido ordenado** | Requiere recorrido*In-order*                | Directo y lineal recorriendo el nivel 0       |
 
 **Ventajas de la Skip List sobre el AVL:**
+
 * Implementación mucho más accesible y menos propensa a bugs de diseño.
 * Ausencia de rotaciones globales (ideal para entornos con alta concurrencia).
 * Recorrido secuencial natural e inmediato a través de su base.
 
 **Desventajas:**
+
 * No garantiza de forma dura el peor caso en \(O(\log n)\).
 * Consume una cantidad ligeramente superior de memoria debido a la redundancia de punteros.
 
 ### 5.3 Skip List vs. Árbol B
 
-| Aspecto | Árbol B | Skip List |
-| :--- | :--- | :--- |
-| **Uso principal** | Bases de datos, sistemas de archivos | Memoria principal, índices en RAM |
-| **Nodos** | Grandes (múltiples claves por nodo) | Un dato por nodo |
-| **Búsqueda** | \(O(\log n)\) | \(O(\log n)\) esperado |
-| **Altura** | Muy baja (\(\log_m n\)) | \(O(\log n)\) niveles |
-| **Localidad de caché** | Excelente (nodos contiguos en bloques) | Regular (nodos dispersos en el heap) |
-| **Paralelización** | Moderada (bloqueos por división/fusión) | Buena (modificaciones concurrentes locales) |
-| **Complejidad de implementación** | Alta | Media |
+| Aspecto                                  | Árbol B                                  | Skip List                                   |
+| :--------------------------------------- | :---------------------------------------- | :------------------------------------------ |
+| **Uso principal**                  | Bases de datos, sistemas de archivos      | Memoria principal, índices en RAM          |
+| **Nodos**                          | Grandes (múltiples claves por nodo)      | Un dato por nodo                            |
+| **Búsqueda**                      | \(O(\log n)\)                             | \(O(\log n)\) esperado                      |
+| **Altura**                         | Muy baja (\(\log_m n\))                   | \(O(\log n)\) niveles                       |
+| **Localidad de caché**            | Excelente (nodos contiguos en bloques)    | Regular (nodos dispersos en el heap)        |
+| **Paralelización**                | Moderada (bloqueos por división/fusión) | Buena (modificaciones concurrentes locales) |
+| **Complejidad de implementación** | Alta                                      | Media                                       |
 
 * **Ventaja del Árbol B:** Excelente localidad de caché debido a que cada nodo ocupa una página física o bloque de almacenamiento. Es la estructura óptima por excelencia para persistencia en disco.
 * **Ventaja de la Skip List:** Es mucho más simple y dinámica en memoria RAM, con un soporte superior y natural para la concurrencia.
@@ -224,13 +233,13 @@ Nivel 0:  cabeza → [1] → [3] → [4] → [6] → [7] → [9] → [10] → [1
 
 ### 5.4 Tabla comparativa final
 
-| Estructura | Búsqueda | Inserción | Eliminación | Balanceo | Implementación |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Lista enlazada simple** | \(O(n)\) | \(O(n)\) | \(O(n)\) | No | Muy simple |
-| **Skip List** | **\(O(\log n)\) esp.** | **\(O(\log n)\) esp.** | **\(O(\log n)\) esp.** | Probabilístico | Simple |
-| **Árbol AVL** | \(O(\log n)\) | \(O(\log n)\) | \(O(\log n)\) | Rotaciones | Compleja |
-| **Árbol B** | \(O(\log n)\) | \(O(\log n)\) | \(O(\log n)\) | División de nodos | Muy compleja |
-| **Árbol Rojo-Negro** | \(O(\log n)\) | \(O(\log n)\) | \(O(\log n)\) | Recoloreo + rotaciones | Compleja |
+| Estructura                      | Búsqueda                    | Inserción                   | Eliminación                 | Balanceo               | Implementación |
+| :------------------------------ | :--------------------------- | :--------------------------- | :--------------------------- | :--------------------- | :-------------- |
+| **Lista enlazada simple** | \(O(n)\)                     | \(O(n)\)                     | \(O(n)\)                     | No                     | Muy simple      |
+| **Skip List**             | **\(O(\log n)\) esp.** | **\(O(\log n)\) esp.** | **\(O(\log n)\) esp.** | Probabilístico        | Simple          |
+| **Árbol AVL**            | \(O(\log n)\)                | \(O(\log n)\)                | \(O(\log n)\)                | Rotaciones             | Compleja        |
+| **Árbol B**              | \(O(\log n)\)                | \(O(\log n)\)                | \(O(\log n)\)                | División de nodos     | Muy compleja    |
+| **Árbol Rojo-Negro**     | \(O(\log n)\)                | \(O(\log n)\)                | \(O(\log n)\)                | Recoloreo + rotaciones | Compleja        |
 
 **Observación:** La Skip List y el árbol AVL comparten la misma complejidad asintótica promedio (\(O(\log n)\)), pero la Skip List no ofrece una garantía rígida en el peor de los casos. A cambio, prescinde de complejas restructuraciones globales, lo que reduce sustancialmente el coste de desarrollo y maximiza el paralelismo en entornos concurrentes.
 
@@ -249,6 +258,7 @@ Nivel 0:  cabeza → [1] → [3] → [4] → [6] → [7] → [9] → [10] → [1
 ## 7. Ventajas y desventajas
 
 ### Ventajas
+
 * **Implementación sencilla:** Es drásticamente más fácil de programar y depurar que un árbol AVL o un árbol Rojo-Negro.
 * **Sin rotaciones masivas:** Las operaciones de mutación se limitan a reajustar punteros locales e inmediatos.
 * **Rendimiento predecible:** Garantiza un coste asintótico esperado de \(O(\log n)\) para las operaciones de búsqueda, inserción y borrado.
@@ -257,6 +267,7 @@ Nivel 0:  cabeza → [1] → [3] → [4] → [6] → [7] → [9] → [10] → [1
 * **Comportamiento controlable:** Al modificar el parámetro de probabilidad \(p\), el desarrollador puede balancear dinámicamente el consumo de memoria frente a la velocidad de salto.
 
 ### Desventajas
+
 * **Falta de garantías duras:** Aunque matemáticamente la probabilidad es despreciable, el peor caso teórico degradado de \(O(n)\) existe si todas las monedas caen del mismo lado.
 * **Mayor consumo de memoria:** Almacenar múltiples capas de punteros redundantes incrementa la huella de bytes respecto a una lista simple.
 * **Dependencia aleatoria:** Requiere un generador de números pseudoaleatorios de buena calidad; una mala distribución arruinaría las propiedades de balanceo.
@@ -357,4 +368,3 @@ class SkipList:
             return True
         return False
 ```
-
